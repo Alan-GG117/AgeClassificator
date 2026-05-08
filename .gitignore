@@ -1,0 +1,13 @@
+# Python
+Backend/.venv/
+__pycache__/
+*.pyc
+
+# ML Models
+Backend/Model/*.pkl
+
+# IDE
+.idea/
+
+# Angular
+frontend/node_modules/
