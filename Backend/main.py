@@ -4,6 +4,7 @@ import numpy as np
 import joblib
 from skimage.feature import hog
 from fastapi import FastAPI, File, UploadFile, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
 
 # 1. Configuración de rutas dinámicas
@@ -21,6 +22,14 @@ app = FastAPI(
     title="Clasificador de edades",
     description="API que recibe imágenes para clasificar la edad.",
     version="1.0.0",
+)
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 try:

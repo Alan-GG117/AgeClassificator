@@ -1,0 +1,34 @@
+<main class="contenedor">
+  <h1>📷 Clasificador de Edades AI</h1>
+  <p>Sube una fotografía para que el modelo estime si es Joven, Adulto o Viejo.</p>
+
+  <div class="controles">
+    <input type="file" (change)="alSeleccionarArchivo($event)" accept="image/png, image/jpeg, image/webp">
+    <button (click)="clasificarEdad()" [disabled]="!archivoSeleccionado || cargando">
+      {{ cargando ? 'Analizando con SVM...' : 'Clasificar Imagen' }}
+    </button>
+  </div>
+
+  <div class="panel-resultados">
+
+    <div class="tarjeta">
+      <h3>Imagen Seleccionada</h3>
+      <div class="caja-imagen">
+        <p *ngIf="!vistaPreviaImagen">Ninguna imagen seleccionada</p>
+        <img *ngIf="vistaPreviaImagen" [src]="vistaPreviaImagen" alt="Vista previa de tu rostro">
+      </div>
+    </div>
+
+    <div class="tarjeta">
+      <h3>Respuesta de la API (JSON)</h3>
+      <pre class="json-caja" *ngIf="resultadoJson">{{ resultadoJson | json }}</pre>
+      <div class="placeholder" *ngIf="!resultadoJson && !cargando">
+        Esperando predicción...
+      </div>
+      <div class="placeholder" *ngIf="cargando">
+        ⏳ Extrayendo características HOG...
+      </div>
+    </div>
+
+  </div>
+</main>

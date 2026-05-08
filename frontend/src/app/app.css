@@ -1,0 +1,75 @@
+.contenedor {
+  max-width: 900px;
+  margin: 40px auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+h1 { text-align: center; color: #2c3e50; }
+p { text-align: center; color: #7f8c8d; margin-bottom: 30px;}
+
+.controles {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+button:disabled { background-color: #bdc3c7; cursor: not-allowed; }
+button:hover:not(:disabled) { background-color: #2980b9; }
+
+.panel-resultados {
+  display: flex;
+  gap: 20px;
+}
+
+.tarjeta {
+  flex: 1;
+  background: #fdfdfd;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.tarjeta h3 { margin-top: 0; color: #2c3e50; border-bottom: 2px solid #eee; padding-bottom: 10px;}
+
+.caja-imagen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 250px;
+  background: #f5f6fa;
+  border-radius: 5px;
+}
+
+img {
+  max-width: 100%;
+  max-height: 350px;
+  border-radius: 5px;
+}
+
+.json-caja {
+  background: #2d3436;
+  color: #a29bfe;
+  padding: 15px;
+  border-radius: 5px;
+  overflow-x: auto;
+  font-size: 14px;
+}
+
+.placeholder {
+  color: #95a5a6;
+  text-align: center;
+  padding: 50px 0;
+  font-style: italic;
+}
